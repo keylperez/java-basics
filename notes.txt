@@ -1,0 +1,13 @@
+Programming Languages: 
+Machine Language
+Assembly Language
+    ex: ADD R1, R2, R3 (add r1 and r2 and store to r3)
+High-level Language
+    ex: C
+
+Java
+- Created by James Gosling and Sun Microstystems in 1991
+- Originally called Oak then renamed to Java in 
+
+Anatomy of Java Program
+Class Name
