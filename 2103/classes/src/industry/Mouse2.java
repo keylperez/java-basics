@@ -1,7 +1,11 @@
 package industry;
 
-public class Mouse2 {
+public class Mouse2 extends Mouse{
 	
+	public void rightClick() {
+		super.rightClick();
+		System.out.println("Clicked Twice");
+	}
 	public void scrollUp() {
 		System.out.println("Scroll up");
 	}
