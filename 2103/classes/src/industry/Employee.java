@@ -1,4 +1,4 @@
-package classes;
+package industry;
 
 public class Employee {
 	private int empID;

@@ -1,4 +1,4 @@
-package src.doWhile;
+package generalTopics;
 
 import java.util.Scanner;
 

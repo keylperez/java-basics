@@ -1,4 +1,4 @@
-package src.forLoop;
+package generalTopics;
 
 import java.util.Scanner;
 

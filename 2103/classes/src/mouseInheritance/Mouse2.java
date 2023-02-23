@@ -1,4 +1,4 @@
-package industry;
+package mouseInheritance;
 
 public class Mouse2 extends Mouse{
 	

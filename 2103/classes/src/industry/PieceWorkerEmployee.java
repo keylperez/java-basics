@@ -1,4 +1,4 @@
-package classes;
+package industry;
 
 public class PieceWorkerEmployee extends Employee{
 	private int piecefinished;

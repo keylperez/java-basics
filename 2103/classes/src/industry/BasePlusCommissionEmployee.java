@@ -1,4 +1,4 @@
-package classes;
+package industry;
 
 public class BasePlusCommissionEmployee extends CommissionEmployee{
 

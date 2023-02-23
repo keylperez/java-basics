@@ -1,4 +1,4 @@
-package classes;
+package industry;
 
 public class HourlyEmployee extends Employee{
 	
