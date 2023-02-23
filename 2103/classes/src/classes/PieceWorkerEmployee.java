@@ -7,7 +7,7 @@ public class PieceWorkerEmployee {
 	public PieceWorkerEmployee() {
 	}
 	
-	public PieceWorkerEmployee(int piecefinished, float bonus, float rate) {
+	public PieceWorkerEmployee(int piecefinished, float rate) {
 		this.piecefinished = piecefinished;
 		this.rate = rate;
 	}
@@ -29,8 +29,9 @@ public class PieceWorkerEmployee {
 	}
 	
 	public float getBonus() {
-		int remainder = piecefinished % 100;
-		return remainder >= 0 ? this.totalPrice() * 5  * remainder: 0;
+		int bonus = piecefinished / 100;
+		return bonus >= 0 ? this.totalPrice() + (5  * bonus): 0;
+//		return remainder;
 	}
 	
 	public float totalPrice() {
