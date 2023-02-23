@@ -1,35 +1,19 @@
 package classes;
 
-public class HourlyEmployee {
-	private int empID;
-	private String empName;
+public class HourlyEmployee extends Employee{
+	
 	private float totalHourWorked;
 	private float ratePerHour;
 
 	public HourlyEmployee() {
+		super();
 	}
 
 	public HourlyEmployee(int empID, String empName, float totalHourWorked, float ratePerHour) {
-		this.empID = empID;
-		this.empName = empName;
+		super.setEmpID(empID);
+		super.setEmpName(empName);
 		this.totalHourWorked = totalHourWorked;
 		this.ratePerHour = ratePerHour;
-	}
-
-	public int getEmpID() {
-		return empID;
-	}
-
-	public void setEmpID(int empID) {
-		this.empID = empID;
-	}
-
-	public String getEmpName() {
-		return empName;
-	}
-
-	public void setEmpName(String empName) {
-		this.empName = empName;
 	}
 
 	public float getTotalHourWorked() {
@@ -49,9 +33,6 @@ public class HourlyEmployee {
 	}
 
 	public float getSalary() {
-//      float total = this.totalHourWorked * this.ratePerHour;
-//      // return this.totalHourWorked * this.ratePerHour;
-//      return total <= 40 ? total : total + 40;
 		float hours, overtime;
 
 		hours = this.totalHourWorked;
@@ -66,22 +47,27 @@ public class HourlyEmployee {
 	}
 
 	public void displayInfo() {
-		System.out.println(this);
+		super.displayInfo();
+		System.out.println("TOTAL HOURS WORKED: " + this.getTotalHourWorked());
+		System.out.println("RATE PER HOUR: " + this.getRatePerHour());
+//		System.out.println(this);
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-
-		sb.append("ID: ");
-		sb.append(this.empID);
-		sb.append("\nNAME: ");
-		sb.append(this.empName);
-		sb.append("\nSALARY: Php");
-		sb.append(String.format(" %,.2f", this.getSalary()));
-		
-		return sb.toString();
-	}
+//	@Override
+//	public String toString() {
+//		StringBuilder sb = new StringBuilder();
+//
+////		sb.append("ID: ");
+////		sb.append(super.getEmpID());
+////		sb.append("\nNAME: ");
+////		sb.append(this.getEmpName());
+//		sb.append(super.toString());
+////		super.toString();
+//		sb.append("\nSALARY: Php");
+//		sb.append(String.format(" %,.2f", this.getSalary()));
+//		
+//		return sb.toString();
+//	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -92,7 +78,7 @@ public class HourlyEmployee {
 		} else {
 			return false;
 		}
-		if(he.empID == this.empID && he.empName == this.empName) {
+		if(he.getEmpID() == this.getEmpID() && he.getEmpName() == this.getEmpName()) {
 			return true;
 		}
 		return false;

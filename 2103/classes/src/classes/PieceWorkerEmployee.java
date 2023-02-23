@@ -1,13 +1,16 @@
 package classes;
 
-public class PieceWorkerEmployee {
+public class PieceWorkerEmployee extends Employee{
 	private int piecefinished;
 	private float rate;
 	
 	public PieceWorkerEmployee() {
+		super();
 	}
 	
-	public PieceWorkerEmployee(int piecefinished, float rate) {
+	public PieceWorkerEmployee(int empID, String empName, int piecefinished, float rate) {
+		super.setEmpID(empID);
+		super.setEmpName(empName);
 		this.piecefinished = piecefinished;
 		this.rate = rate;
 	}
@@ -37,4 +40,30 @@ public class PieceWorkerEmployee {
 	public float totalPrice() {
 		return this.piecefinished * rate;
 	}
+	
+	public void displayInfo() {
+		super.displayInfo();
+		System.out.println("PIECE FINISHED: " + this.getPiecefinished());
+//		System.out.println(this);
+	}
+	
+	public int inheritEmpID() {
+		return super.getEmpID();
+	}
+	
+	public String inheritEmpName() {
+		return super.getEmpName();
+	}
+	
+//	@Override
+//	public String toString() {
+//		StringBuilder sb = new StringBuilder();
+//
+//		sb.append(super.toString());
+////		super.toString();
+//		sb.append("\nPIECE FINISHED: ");
+//		sb.append(String.format("%d", this.getPiecefinished()));
+//		
+//		return sb.toString();
+//	}
 }

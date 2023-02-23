@@ -1,4 +1,4 @@
-package classes;
+package randoms;
 
 public class MyTime {
 	private int hour;
