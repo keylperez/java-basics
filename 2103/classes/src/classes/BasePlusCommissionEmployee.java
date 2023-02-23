@@ -1,17 +1,19 @@
 package classes;
 
-public class BasePlusCommissionEmployee {
+public class BasePlusCommissionEmployee extends CommissionEmployee{
 
 	private float baseSalary;
-	private float totalSales;
 	private float totalSalary;
 
 	public BasePlusCommissionEmployee() {
+		super();
 	}
 
-	public BasePlusCommissionEmployee(float baseSalary, float totalSales) {
+	public BasePlusCommissionEmployee(int empID, String empName, float baseSalary, float totalSales) {
+		super.setEmpID(empID);
+		super.setEmpName(empName);
 		this.baseSalary = baseSalary;
-		this.totalSales = totalSales;
+		super.setTotalSales(totalSales);
 //		this.totalSalary = totalSalary;
 	}
 
@@ -23,21 +25,36 @@ public class BasePlusCommissionEmployee {
 		this.baseSalary = baseSalary;
 	}
 
-	public float getTotalSales() {
-		return totalSales;
-	}
-
-	public void setTotalSales(float totalSales) {
-		this.totalSales = totalSales;
-	}
-
-	public float getTotalSalary(float commission) {
-		this.totalSalary = this.baseSalary + commission;
-		return this.totalSalary;
+	public float getTotalSalary() {
+		return totalSalary;
 	}
 
 	public void setTotalSalary(float totalSalary) {
 		this.totalSalary = totalSalary;
 	}
+	
+	public float computeTotalSalary() {
+		this.setTotalSalary(this.baseSalary + super.getCommission());
+		return this.totalSalary;
+	}
+	
+	public void displayInfo() {
+		super.displayInfo();
+		System.out.println("BasePlusCommissionEmployee");
+		System.out.println("BASE SALARY: " + this.getBaseSalary());
+//		System.out.println(this);
+	}
+	
+//	@Override
+//	public String toString() {
+//		StringBuilder sb = new StringBuilder();
+//
+//		sb.append(super.toString());
+////		super.toString();
+//		sb.append("\nBASE SALARY: ");
+//		sb.append(String.format("%,.2f", this.getBaseSalary()));
+//		
+//		return sb.toString();
+//	}
 
 }
