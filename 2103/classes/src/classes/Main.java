@@ -33,8 +33,9 @@ public class Main {
         CommissionEmployee ce = new CommissionEmployee(10000);
         System.out.println("CommissionEmployee commission: " + ce.getCommission());
         
-        BasePlusCommissionEmployee bpce = new BasePlusCommissionEmployee(ce.getCommission(), pwe.totalPrice());
-        System.out.println("BasePlusCommissionEmployee total salary: " + bpce.getTotalSalary());
+        BasePlusCommissionEmployee bpce = new BasePlusCommissionEmployee(pwe.totalPrice(), ce.getTotalSales());
+        System.out.println("Base Salary: " + bpce.getBaseSalary());
+        System.out.println("BasePlusCommissionEmployee total salary: " + bpce.getTotalSalary(ce.getCommission()));
 	}
 
 }
