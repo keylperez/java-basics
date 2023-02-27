@@ -39,6 +39,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
 	}
 	
 	public void displayInfo() {
+		super.displayInfo();
 		System.out.println("BasePlusCommissionEmployee");
 		System.out.println("BASE SALARY: " + this.getBaseSalary());
 //		System.out.println(this);
