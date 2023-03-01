@@ -10,11 +10,8 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
 	}
 
 	public BasePlusCommissionEmployee(int empID, String empName, float baseSalary, float totalSales) {
-		super.setEmpID(empID);
-		super.setEmpName(empName);
+		super(empID, empName, totalSales);
 		this.baseSalary = baseSalary;
-		super.setTotalSales(totalSales);
-//		this.totalSalary = totalSalary;
 	}
 
 	public float getBaseSalary() {

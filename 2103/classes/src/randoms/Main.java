@@ -1,5 +1,7 @@
 package randoms;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -25,5 +27,41 @@ public class Main {
 		t2.displayTime();
 		t2.tickByHour();
 		t2.displayTime();
+		
+		Scanner input = new Scanner(System.in);
+
+
+        System.out.print("Enter blender version: ");
+        int version = input.nextInt();
+
+        Blender blinding = new Blender();
+
+        String fruit1;
+        String fruit2;
+        
+        switch(version){
+            case 1:
+                blinding.blend();
+                break;
+            case 2:
+                System.out.print("Enter first fruit: ");
+                fruit1 = input.nextLine();
+                System.out.print("\nEnter second fruit: ");
+                fruit2 = input.nextLine();
+                blinding.blend(fruit1, fruit2);
+                break;
+            case 3:
+                System.out.print("Enter first fruit: ");
+                fruit1 = input.nextLine();
+                System.out.print("\nEnter second fruit: ");
+                fruit2 = input.nextLine();
+                System.out.print("Enter times to blend: ");
+                int n = input.nextInt();
+                blinding.blend(fruit1, fruit2, n);
+                break;
+            default:
+                System.out.println("Error");
+                break;
+        }
 	}
 }

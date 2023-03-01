@@ -8,8 +8,7 @@ public class CommissionEmployee extends Employee{
 		super();
 	}
 	public CommissionEmployee(int empID, String empName, float totalSales) {
-		super.setEmpID(empID);
-		super.setEmpName(empName);
+		super(empID, empName);
 		this.totalSales = totalSales;
 	}
 	
