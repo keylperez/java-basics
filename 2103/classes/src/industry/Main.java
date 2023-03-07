@@ -29,6 +29,23 @@ public class Main {
 //        System.out.println(bpce.toString());
 //        System.out.println("Base Salary: " + bpce.getBaseSalary());
 //        System.out.println("BasePlusCommissionEmployee total salary: " + bpce.getTotalSalary(ce.getCommission()));
+        	
+        EmployeeRoster empList = new EmployeeRoster();
+        System.out.println();
+        empList.addEmployee(e);
+        empList.addEmployee(e);
+        empList.addEmployee(e);
+        empList.addEmployee(e);
+        empList.addEmployee(e);
+        empList.addEmployee(e);
+        empList.displayEmployees();
+        System.out.println(empList.getCount());
+        empList.deleteEmployee(1000);
+        System.out.println();
+        empList.displayEmployees();
+        System.out.println(empList.getCount());
+        
+	
 	}
 
 }
