@@ -1,14 +1,14 @@
 
-public class PieceWorkerEmployee {
+public class PieceWorkerEmployee extends Employee{
 	private int piecefinished;
 	private float rate;
 	
 	public PieceWorkerEmployee() {
-		
+		super();
 	}
 	
-	public PieceWorkerEmployee(int piecefinished, float rate) {
-
+	public PieceWorkerEmployee(int empID, String empName, int piecefinished, float rate) {
+		super(empID, empName);
 		this.piecefinished = piecefinished;
 		this.rate = rate;
 	}

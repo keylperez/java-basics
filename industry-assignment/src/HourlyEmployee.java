@@ -1,13 +1,16 @@
 
-public class HourlyEmployee {
+
+public class HourlyEmployee extends Employee{
 	
 	private float totalHourWorked;
 	private float ratePerHour;
 
 	public HourlyEmployee() {
+		super();
 	}
 
-	public HourlyEmployee(float totalHourWorked, float ratePerHour) {
+	public HourlyEmployee(int empID, String empName, float totalHourWorked, float ratePerHour) {
+		super(empID, empName);
 		this.totalHourWorked = totalHourWorked;
 		this.ratePerHour = ratePerHour;
 	}
@@ -43,6 +46,7 @@ public class HourlyEmployee {
 	}
 
 	public void displayInfo() {
+		super.displayInfo();
 		System.out.println("TOTAL HOURS WORKED: " + this.getTotalHourWorked());
 		System.out.println("RATE PER HOUR: " + this.getRatePerHour());
 	}
@@ -56,5 +60,19 @@ public class HourlyEmployee {
 		sb.append(String.format(" %,.2f", this.getSalary()));
 		
 		return sb.toString();
+	}
+	
+	public boolean equals(Object obj) {
+		HourlyEmployee he;
+
+		if (obj instanceof HourlyEmployee) {
+			he = (HourlyEmployee) obj;
+		} else {
+			return false;
+		}
+		if(he.getEmpID() == this.getEmpID() && he.getEmpName() == this.getEmpName()) {
+			return true;
+		}
+		return false;
 	}
 }

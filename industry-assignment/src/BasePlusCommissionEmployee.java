@@ -1,27 +1,18 @@
 
-public class BasePlusCommissionEmployee {
+public class BasePlusCommissionEmployee extends CommissionEmployee{
 
 	private float baseSalary;
 	private float totalSalary;
-	private float commission;
 
 	public BasePlusCommissionEmployee() {
-		
+		super();
 	}
 
-	public BasePlusCommissionEmployee(float baseSalary, float totalSales, float commission) {
-		this.commission = commission;
+	public BasePlusCommissionEmployee(int empID, String empName, float baseSalary, float totalSales, float commission) {
+		super(empID, empName, commission);
 		this.baseSalary = baseSalary;
 	}
 
-	
-	public float getCommission() {
-		return commission;
-	}
-	
-	public void setCommission(float commission) {
-		this.commission = commission;
-	}
 	
 	public float getBaseSalary() {
 		return baseSalary;
@@ -40,7 +31,7 @@ public class BasePlusCommissionEmployee {
 	}
 	
 	public float computeTotalSalary() {
-		this.setTotalSalary(this.baseSalary + this.commission);
+		this.setTotalSalary(this.baseSalary + super.getCommission());
 		return this.totalSalary;
 	}
 	

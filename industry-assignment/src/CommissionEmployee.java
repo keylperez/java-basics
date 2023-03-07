@@ -1,13 +1,13 @@
 
-public class CommissionEmployee {
+public class CommissionEmployee extends Employee{
 	private float totalSales;
 	private float commission;
 	
 	public CommissionEmployee() {
 		super();
 	}
-	public CommissionEmployee(float totalSales) {
-		
+	public CommissionEmployee(int empID, String empName, float totalSales) {
+		super(empID, empName);
 		this.totalSales = totalSales;
 	}
 	
@@ -33,6 +33,8 @@ public class CommissionEmployee {
 	}
 	
 	public void displayInfo() {
+
+		super.displayInfo();
 		System.out.println("TOTAL SALES: " + this.getTotalSales());
 	}
 }
