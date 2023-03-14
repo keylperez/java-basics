@@ -1,4 +1,3 @@
-
 public class BasePlusCommissionEmployee extends CommissionEmployee{
 
 	private float baseSalary;
@@ -30,14 +29,15 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
 		this.totalSalary = totalSalary;
 	}
 	
-	public float computeTotalSalary() {
+	@Override
+	public float computeSalary() {
 		this.setTotalSalary(this.baseSalary + super.getCommission());
 		return this.totalSalary;
 	}
 	
 	public void displayInfo() {
-		System.out.println("BasePlusCommissionEmployee");
-		System.out.println("BASE SALARY: " + this.getBaseSalary());
+
+		System.out.println("BASE SALARY: " + this.getBaseSalary() + "		");
 //		System.out.println(this);
 	}
 	

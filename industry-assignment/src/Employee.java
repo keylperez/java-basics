@@ -2,14 +2,36 @@
 public class Employee {
 	private int empID;
 	private String empName;
+	private float salary;
+
+	public Employee(int empID, String empName, float salary) {
+		super();
+		this.empID = empID;
+		this.empName = empName;
+		this.salary = salary;
+	}
+
+	public Employee(int empID, String empName) {
+		super();
+		this.empID = empID;
+		this.empName = empName;
+	}
 
 	public Employee() {
 		super();
 	}
 
-	public Employee(int empID, String empName) {
-		this.empID = empID;
-		this.empName = empName;
+
+	public float getSalary() {
+		return salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	
+	public float computeSalary() {
+		return salary;
 	}
 
 	public int getEmpID() {
@@ -29,9 +51,10 @@ public class Employee {
 	}
 
 	public void displayInfo() {
-		System.out.println("Employee");
-		System.out.println("ID: " + this.getEmpID());
-		System.out.println("Name: " + this.getEmpName());
+		System.out.println();
+		System.out.print("ID: " + this.getEmpID() + "	");
+		System.out.print("Name: " + this.getEmpName() + "	");
 //			System.out.println(this);
 	}
+	
 }

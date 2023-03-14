@@ -1,4 +1,3 @@
-
 public class PieceWorkerEmployee extends Employee{
 	private int piecefinished;
 	private float rate;

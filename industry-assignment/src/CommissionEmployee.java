@@ -1,4 +1,3 @@
-
 public class CommissionEmployee extends Employee{
 	private float totalSales;
 	private float commission;
@@ -23,7 +22,7 @@ public class CommissionEmployee extends Employee{
 	public void setTotalSales(float totalSales) {
 		this.totalSales = totalSales;
 	}
-	public float computeCommission() {
+	public float computeSalary() {
 		this.commission = 0.05f;
 		if(this.totalSales > 10000.00) this.commission = 0.15f;
 		if(this.totalSales > 50000.00) this.commission = 0.20f;
@@ -33,8 +32,9 @@ public class CommissionEmployee extends Employee{
 	}
 	
 	public void displayInfo() {
-
 		super.displayInfo();
+		System.out.println();
 		System.out.println("TOTAL SALES: " + this.getTotalSales());
+		System.out.println("Commission: " + this.getCommission());
 	}
 }

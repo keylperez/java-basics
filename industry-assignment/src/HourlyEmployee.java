@@ -1,5 +1,3 @@
-
-
 public class HourlyEmployee extends Employee{
 	
 	private float totalHourWorked;
