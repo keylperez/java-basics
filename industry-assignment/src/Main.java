@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Main {
 
@@ -19,22 +20,29 @@ public class Main {
 		
 		EmployeeRoster data = new EmployeeRoster();
 		System.out.println();
-		data.addEmployee(bpce);
-		data.addEmployee(e);
-		data.addEmployee(he);
-		data.addEmployee(pwe);
-		data.addEmployee(ce);
-//		data.addEmployee(new BasePlusCommissionEmployee(2000, "Sarah"));
-//		data.addEmployee(new BasePlusCommissionEmployee(3000, "Jody"));
-//		data.addEmployee(new BasePlusCommissionEmployee(4000, "Nikki"));
-//		data.addEmployee(new BasePlusCommissionEmployee(5000, "Jason"));
-//		data.addEmployee(new BasePlusCommissionEmployee(6000, "David"));
-//		data.addEmployee(new BasePlusCommissionEmployee(7000, "Peter"));
+		System.out.print(data.addEmployee(e));
+		System.out.print(data.addEmployee(he));
+		System.out.print(data.addEmployee(pwe));
+		System.out.print(data.addEmployee(ce));
+		System.out.print(data.addEmployee((Employee)bpce));
 		data.displayEmployees();
 //		System.out.println(String.format("\nCount: %d", data.getCount()));
-		EmployeeRoster newData = data.deleteEmployee(2000);
+		ArrayList<Employee> newData = data.deleteEmployee(2000);
 		System.out.println();
-		newData.displayEmployees();
+		System.out.println("\nID:	NAME:	SALARY:		TYPE:	");
+		for(Employee emp : newData) {
+
+			System.out.print(String.format("\n%d	%s	%,.2f	", emp.getEmpID(), emp.getEmpName(), emp.getSalary()));
+			
+			if (emp instanceof HourlyEmployee)
+				System.out.print("Hourly ");
+			if (emp instanceof CommissionEmployee)
+				System.out.print("Commission ");
+			if (emp instanceof PieceWorkerEmployee)
+				System.out.print("Piece Worker ");
+			if (emp instanceof Employee)
+				System.out.print("Employee");
+		}
 		data.displayEmployees();
 		System.out.println();
 		System.out.println(data.countBasePlusCommissionEmployee());
